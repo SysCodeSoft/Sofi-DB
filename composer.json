@@ -1,0 +1,31 @@
+{
+    "name": "syscode/sofi-db",
+    "description": "Sofi Framework DB Layer",
+    "keywords": [
+        "Sofi",
+        "PHP",
+        "framework"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Trifonov",
+            "email": "mp.trifonov@gmail.com",
+            "role": "Founder and project lead"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "syscode/sofi-data": "*",
+	"mongodb/mongodb": "*"
+    },
+    "autoload": {
+        "psr-4": {"Sofi\\db\\": "src"}
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
