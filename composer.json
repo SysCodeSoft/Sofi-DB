@@ -18,7 +18,7 @@
     "require": {
         "php": ">=5.6.0",
         "syscode/sofi-data": "*",
-	"mongodb/mongodb": "v1.2.x-dev"
+	"mongodb/mongodb": "v1.3.x-dev"
     },
     "autoload": {
         "psr-4": {"Sofi\\db\\": "src"}
