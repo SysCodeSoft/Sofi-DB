@@ -1,6 +1,6 @@
 <?php
 
-namespace Sofi\data\db\interfaces;
+namespace Sofi\db\interfaces;
 
 interface Query
 {

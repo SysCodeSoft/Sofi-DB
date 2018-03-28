@@ -1,22 +1,26 @@
 <?php
 
-namespace Sofi\data\db\MongoDB;
+namespace Sofi\db\MongoDB;
 
-class Query extends \Sofi\data\db\Query
+class Query extends \Sofi\db\Query
 {
     
     
     public function all()
     {
         $opt = $this->prepare();
-        return $this->provider->find($opt['conditions'], $opt['options']);
+        $docs = $this->provider->find($opt['conditions'], $opt['options']);
+        
+        return new \Sofi\data\Dataset($docs, $this->as);
     }
 
     public function one()
     {
         $opt = $this->prepare();
-        return $this->provider->findOne($opt['conditions'], $opt['options']);
+//        \Sofi\Base\d($opt);
+        $doc = $this->provider->findOne($opt['conditions'], $opt['options']);
         
+        return new $this->as((array)$doc);        
     }
     
     function prepare()

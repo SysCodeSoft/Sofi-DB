@@ -1,21 +1,31 @@
 <?php
 
-namespace Sofi\data\db;
+namespace Sofi\db;
 
 abstract class Query implements interfaces\Query
 {
     protected $provider;
+    protected $as;
     
     protected $conditions = [];
     protected $fields = [];
     protected $specify = [];
             
-    function __construct($provider = null)
+    function __construct($provider, $as, $conditions)
     {
         $this->provider = $provider;
+        $this->as = $as;
+        
+        $this->conditions($conditions);
     }
-       
     
+    function conditions($conditions)
+    {
+        $this->conditions = $conditions;
+        
+        return $this;
+    }
+
     /**
      * 
      * @return Query
